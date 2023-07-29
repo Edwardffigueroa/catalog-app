@@ -1,0 +1,20 @@
+.input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("https://www.w3schools.com/css/searchicon.png");
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    outline: none;
+    transition: 0.5s;
+
+    &:focus {
+        border: 1px solid #555;
+    }
+}

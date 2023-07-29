@@ -1,0 +1,18 @@
+@import "../../styles/vars";
+
+.nav {
+    padding: 35px 30px;
+    color: $primary-color;
+    border-bottom: solid 1px grey;
+}
+
+.ul {
+    display: flex;
+    gap: 15px;
+}
+
+.li {
+    &:hover {
+        text-decoration: underline;
+    }
+}

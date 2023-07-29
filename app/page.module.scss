@@ -2,10 +2,18 @@
 
 .main {
   padding: 10px;
-  
 }
 
-.h1 {
+.h2 {
   color: $primary-color;
-  font-size: $h1-font-size;
+  font-size: $h2-font-size;
+  margin: 10px 0px;
+}
+
+.products_container {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
 }

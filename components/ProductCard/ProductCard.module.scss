@@ -1,0 +1,36 @@
+@import "../../styles/vars";
+
+.card {
+    border-radius: $border-radius-3;
+    border: solid 1px rgb(226, 225, 225);
+    padding: 10px;
+    box-shadow: 5px 5px 8px rgba(115, 115, 115, 0.193);
+    max-width: 180px;
+    background-color: white;
+}
+
+.img {
+    border-radius: $border-radius-2;
+}
+
+.title {
+    font-size: $p-font-size-2;
+    font-weight: 500;
+    color: rgb(25, 37, 37);
+    margin: 8px 0px;
+}
+
+.description {
+    font-size: $p-font-size-1;
+    color: grey;
+    margin: 8px 0px;
+}
+
+.hr {
+    width: 100%;
+}
+
+.price {
+    font-weight: 500;
+    margin: 8px 0px;
+}

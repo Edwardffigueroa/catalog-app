@@ -1,11 +1,25 @@
-
-$main-background-color: #282c34;
+$main-background-color: #f3f3f3;
 $primary-color: #296ef9;
-$secondary-color: #61dafb;
+$secondary-color: #a5a5a5;
+$tertiary-color: #ffa600;
+// $main-background-color: #282c34;
+// $primary-color: #296ef9;
+// $secondary-color: #f3f3f3;
+// $tertiary-color: #ffa600;
+
+$default-text-color: #f3f3f3;
 
 $tablet-min-screen-size: 600px;
 $desktop-min-screen-size: 800px;
 
 $h1-font-size: 2.5em;
 $h2-font-size: 1.875em;
-$p-font-size: 0.875em;
+$p-font-size-1: 0.875em;
+$p-font-size-2: 1em;
+$p-font-size-3: 1.2em;
+$link-font-size: 0.875em;
+
+$border-radius-1: 2px;
+$border-radius-2: 4px;
+$border-radius-3: 6px;
+$border-radius-4: 8px;
