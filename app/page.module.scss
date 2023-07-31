@@ -1,11 +1,24 @@
 @import "../styles/vars";
+@import "../styles/mixings";
 
-.main {
-  padding: 10px;
-  
+.h2 {
+  color: $primary-color;
+  font-size: $h2-font-size;
+  font-weight: 500;
+  margin: $space-5 0px $space-5 0px;
 }
 
-.h1 {
-  color: $primary-color;
-  font-size: $h1-font-size;
+.products_container {
+  padding: $space-6 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-5;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

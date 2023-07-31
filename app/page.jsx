@@ -1,11 +1,26 @@
+import ProductCard from "@/components/ProductCard";
 import styles from "./page.module.scss";
+import SearchBar from "@/components/SearchBar";
+
+export const metadata = {
+  title: "Catalog App - Products",
+  description: "Platzi technical challenge",
+};
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <h1 className={styles.h1} data-testid="heading">
-        Hello world
-      </h1>
-    </main>
+    <>
+      <h2 className={styles.h2} data-testid="heading">
+        All products
+      </h2>
+      <SearchBar />
+      <section className={styles.products_container}>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </section>
+    </>
   );
 }
