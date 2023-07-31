@@ -16,6 +16,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navbar />
         <main className={styles.main}>{children}</main>
+        <footer className={styles.footer}>
+          <p>
+            All rights reserved - <b>Edwar Figueroa</b>
+          </p>
+        </footer>
       </body>
     </html>
   );
