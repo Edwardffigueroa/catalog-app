@@ -1,15 +1,18 @@
 @import "../../styles/vars";
 
 .card {
+    position: "relative";
     border-radius: $border-radius-3;
-    border: solid 1px rgb(226, 225, 225);
-    padding: 10px;
-    box-shadow: 5px 5px 8px rgba(115, 115, 115, 0.193);
-    max-width: 180px;
+    border: solid 1px $light-gray;
+    padding: $space-4;
+    box-shadow: $box-shadow-heavy;
+    max-width: 200px;
     background-color: white;
+    justify-self: center;
 }
 
 .img {
+    width: 100%;
     border-radius: $border-radius-2;
 }
 
@@ -17,13 +20,13 @@
     font-size: $p-font-size-2;
     font-weight: 500;
     color: rgb(25, 37, 37);
-    margin: 8px 0px;
+    margin: $space-3 0px;
 }
 
 .description {
     font-size: $p-font-size-1;
     color: grey;
-    margin: 8px 0px;
+    margin: $space-3 0px;
 }
 
 .hr {
@@ -32,5 +35,25 @@
 
 .price {
     font-weight: 500;
-    margin: 8px 0px;
+    margin: $space-3 0px;
+}
+
+.card_footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.favorite_btn {
+    background-color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.favorite_img {
+    width: 30px;
+    height: 30px;
 }

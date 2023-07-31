@@ -3,20 +3,25 @@ import styles from "./SearchBar.module.scss";
 
 const SearchBar = () => {
   return (
-    <form>
+    <div>
       <input
         className={styles.input}
         type="text"
         name="search-product"
         placeholder="Search.."
       />
-      <div>
-        <select className={styles.input} id="standard-select">
-          <option value="Option 1">Option 1</option>
+      <div className={styles.filters_container}>
+        <label className={styles.select_label} htmlFor="order-by">
+          Order by:
+        </label>
+        <select name="order-by" className={styles.select}>
+          <option value="default">Default</option>
+          <option value="recomended">Price</option>
+          <option value="recomended">A-Z</option>
+          <option value="recomended">Z-A</option>
         </select>
-        <span class="focus"></span>
       </div>
-    </form>
+    </div>
   );
 };
 

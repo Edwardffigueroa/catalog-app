@@ -1,13 +1,17 @@
+$light-gray: #f2f2f2;
+
 $main-background-color: #f3f3f3;
 $primary-color: #296ef9;
-$secondary-color: #a5a5a5;
-$tertiary-color: #ffa600;
-// $main-background-color: #282c34;
-// $primary-color: #296ef9;
-// $secondary-color: #f3f3f3;
-// $tertiary-color: #ffa600;
+$secondary-color: #ffa600;
+$tertiary-color: #8e8d8d;
 
-$default-text-color: #f3f3f3;
+$shadow-color: rgba(115, 115, 115, 0.193);
+
+$box-shadow-heavy: 5px 5px 8px $shadow-color;
+$box-shadow-soft: 3px 3px 5px $shadow-color;
+
+$default-text-color: $tertiary-color;
+$accent-text-color: black;
 
 $tablet-min-screen-size: 600px;
 $desktop-min-screen-size: 800px;
@@ -19,7 +23,18 @@ $p-font-size-2: 1em;
 $p-font-size-3: 1.2em;
 $link-font-size: 0.875em;
 
+$space-1: 2px;
+$space-2: 5px;
+$space-3: 8px;
+$space-4: 12px;
+$space-5: 15px;
+$space-6: 20px;
+$space-7: 25px;
+$space-8: 30px;
+
 $border-radius-1: 2px;
 $border-radius-2: 4px;
 $border-radius-3: 6px;
 $border-radius-4: 8px;
+$border-radius-5: 10px;
+$border-radius-6: 20px;
