@@ -1,0 +1,25 @@
+@import "../../styles/vars";
+
+.error_container {
+    position: relative;
+    top: 30vh;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    gap: $space-5;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: white;
+    border: solid 1px $light-gray;
+    padding: $space-5 $space-6;
+    border-radius: $border-radius-5;
+    &:hover {
+        box-shadow: $box-shadow-soft;
+    }
+}
