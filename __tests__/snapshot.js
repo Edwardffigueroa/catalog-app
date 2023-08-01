@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
-import Home from "../app/page";
+import HomeContainer from "@/containers/HomeContainer/HomeContainer";
 
 it("renders homepage unchanged", () => {
-  const { container } = render(<Home />);
+  const { container } = render(<HomeContainer products={[]} />);
   expect(container).toMatchSnapshot();
 });

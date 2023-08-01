@@ -2,15 +2,54 @@
 
 exports[`renders homepage unchanged 1`] = `
 <div>
-  <main
-    class="main"
+  <h2
+    class="h2"
+    data-testid="heading"
   >
-    <h1
-      class="h1"
-      data-testid="heading"
+    All products
+  </h2>
+  <div>
+    <input
+      class="input"
+      data-testid="search-bar"
+      name="searchProduct"
+      placeholder="Type your product..."
+      type="text"
+      value=""
+    />
+    <div
+      class="filters_container"
     >
-      Hello world
-    </h1>
-  </main>
+      <label
+        class="select_label"
+        for="orderBy"
+      >
+        Order by:
+      </label>
+      <select
+        class="select"
+        name="orderBy"
+      >
+        <option
+          value="price"
+        >
+          Lower Price
+        </option>
+        <option
+          value="az"
+        >
+          A-Z
+        </option>
+        <option
+          value="za"
+        >
+          Z-A
+        </option>
+      </select>
+    </div>
+  </div>
+  <section
+    class="products_container"
+  />
 </div>
 `;
