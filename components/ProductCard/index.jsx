@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import styles from "./ProductCard.module.scss";
-import PropTypes from "prop-types";
+import { ProductTypes } from "@/types";
 
 const ProductCard = ({ title, price, description, image }) => {
   return (
@@ -33,11 +33,6 @@ const ProductCard = ({ title, price, description, image }) => {
   );
 };
 
-ProductCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-};
+ProductCard.propTypes = ProductTypes.isRequired;
 
 export default ProductCard;
