@@ -8,16 +8,19 @@ import { orderAlphabeticalTitle, orderByPrice } from "@/helpers/functions";
 import { ORDER_BY, ORDER_DESC } from "@/utils/constants";
 import PropTypes from "prop-types";
 import { ProductTypes } from "@/types";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 const HomeContainer = ({ products: serverProducts }) => {
   const [products, setProducts] = useState(serverProducts || []);
   const [allowInteraction, setAllowInteraction] = useState(false);
+
   const [filters, setFilters] = useState({
     searchProduct: "",
     orderBy: ORDER_BY.PRICE,
   });
 
   const debouncedSearchTerm = useDebouncer(filters.searchProduct, 500);
+  const [favorites, setFavorites] = useLocalStorage("favorites", []);
 
   useEffect(() => {
     setAllowInteraction(true);
@@ -51,6 +54,14 @@ const HomeContainer = ({ products: serverProducts }) => {
     }));
   };
 
+  const handleOnAddFavorites = (obj) => {
+    setFavorites([...favorites, obj]);
+  };
+
+  const handleOnDeleteFavorites = (obj) => {
+    setFavorites(favorites.filter((fav) => fav.id !== obj.id));
+  };
+
   return (
     <>
       <h2 className={styles.h2} data-testid="heading">
@@ -63,7 +74,13 @@ const HomeContainer = ({ products: serverProducts }) => {
       />
       <section className={styles.products_container}>
         {products.map((product) => (
-          <ProductCard key={product.id} {...product} />
+          <ProductCard
+            key={product.id}
+            {...product}
+            handleOnAddFavorites={handleOnAddFavorites}
+            handleOnDeleteFavorites={handleOnDeleteFavorites}
+            isFavorite={favorites.some((fav) => fav.id === product.id)}
+          />
         ))}
       </section>
     </>

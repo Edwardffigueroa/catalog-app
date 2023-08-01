@@ -3,7 +3,33 @@ import React from "react";
 import styles from "./ProductCard.module.scss";
 import { ProductTypes } from "@/types";
 
-const ProductCard = ({ title, price, description, image }) => {
+const ProductCard = ({
+  id,
+  title,
+  price,
+  description,
+  image,
+  isFavorite,
+  handleOnAddFavorites,
+  handleOnDeleteFavorites,
+}) => {
+  const handleOnClick = () => {
+    const obj = {
+      id,
+      title,
+      price,
+      description,
+      image,
+      isFavorite,
+    };
+
+    if (isFavorite) {
+      handleOnDeleteFavorites(obj);
+      return;
+    }
+    handleOnAddFavorites(obj);
+  };
+
   return (
     <div className={styles.card}>
       <img // TODO: use Image next component instead
@@ -16,18 +42,24 @@ const ProductCard = ({ title, price, description, image }) => {
       <hr className={styles.hr} />
       <div className={styles.card_footer}>
         <p className={styles.price}>${price}</p>
-        <button className={styles.favorite_btn}>
-          {/* <img
-            className={styles.favorite_img}
-            src="/icons/heart-outlined.svg"
-            alt="Mark-as-favorite-icon"
-          /> */}
-          <img
-            className={styles.favorite_img}
-            src="/icons/heart-fullfilled.svg"
-            alt="Delete-from-favorite-icon"
-          />
-        </button>
+
+        {isFavorite ? (
+          <button onClick={handleOnClick} className={styles.favorite_btn}>
+            <img
+              className={styles.favorite_img}
+              src="/icons/heart-fullfilled.svg"
+              alt="Delete-from-favorite-icon"
+            />
+          </button>
+        ) : (
+          <button onClick={handleOnClick} className={styles.favorite_btn}>
+            <img
+              className={styles.favorite_img}
+              src="/icons/heart-outlined.svg"
+              alt="Mark-as-favorite-icon"
+            />
+          </button>
+        )}
       </div>
     </div>
   );
