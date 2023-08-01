@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "./ProductCard.module.scss";
 import { ProductTypes } from "@/types";
+import Image from "next/image";
 
 const ProductCard = ({
   id,
@@ -12,6 +13,7 @@ const ProductCard = ({
   isFavorite,
   handleOnAddFavorites,
   handleOnDeleteFavorites,
+  toggleLayout,
 }) => {
   const handleOnClick = () => {
     const obj = {
@@ -31,7 +33,7 @@ const ProductCard = ({
   };
 
   return (
-    <div className={styles.card}>
+    <div className={`${toggleLayout ? styles.card : styles.card2}`}>
       <img // TODO: use Image next component instead
         className={styles.img}
         src={image}
@@ -45,7 +47,9 @@ const ProductCard = ({
 
         {isFavorite ? (
           <button onClick={handleOnClick} className={styles.favorite_btn}>
-            <img
+            <Image
+              height={30}
+              width={30}
               className={styles.favorite_img}
               src="/icons/heart-fullfilled.svg"
               alt="Delete-from-favorite-icon"
@@ -53,7 +57,9 @@ const ProductCard = ({
           </button>
         ) : (
           <button onClick={handleOnClick} className={styles.favorite_btn}>
-            <img
+            <Image
+              height={30}
+              width={30}
               className={styles.favorite_img}
               src="/icons/heart-outlined.svg"
               alt="Mark-as-favorite-icon"

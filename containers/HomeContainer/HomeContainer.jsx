@@ -1,5 +1,5 @@
 "use client";
-import ProductCard from "@/components/ProductCard";
+
 import SearchBar from "@/components/SearchBar";
 import React, { useState, useEffect } from "react";
 import styles from "../../app/page.module.scss";
@@ -8,7 +8,7 @@ import { orderAlphabeticalTitle, orderByPrice } from "@/helpers/functions";
 import { ORDER_BY, ORDER_DESC } from "@/utils/constants";
 import PropTypes from "prop-types";
 import { ProductTypes } from "@/types";
-import useLocalStorage from "@/hooks/useLocalStorage";
+import ProductsView from "@/components/ProductsView";
 
 const HomeContainer = ({ products: serverProducts }) => {
   const [products, setProducts] = useState(serverProducts || []);
@@ -20,7 +20,6 @@ const HomeContainer = ({ products: serverProducts }) => {
   });
 
   const debouncedSearchTerm = useDebouncer(filters.searchProduct, 500);
-  const [favorites, setFavorites] = useLocalStorage("favorites", []);
 
   useEffect(() => {
     setAllowInteraction(true);
@@ -54,14 +53,6 @@ const HomeContainer = ({ products: serverProducts }) => {
     }));
   };
 
-  const handleOnAddFavorites = (obj) => {
-    setFavorites([...favorites, obj]);
-  };
-
-  const handleOnDeleteFavorites = (obj) => {
-    setFavorites(favorites.filter((fav) => fav.id !== obj.id));
-  };
-
   return (
     <>
       <h2 className={styles.h2} data-testid="heading">
@@ -72,17 +63,7 @@ const HomeContainer = ({ products: serverProducts }) => {
         filters={filters}
         onChange={handlerOnChangeFilters}
       />
-      <section className={styles.products_container}>
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            {...product}
-            handleOnAddFavorites={handleOnAddFavorites}
-            handleOnDeleteFavorites={handleOnDeleteFavorites}
-            isFavorite={favorites.some((fav) => fav.id === product.id)}
-          />
-        ))}
-      </section>
+      <ProductsView products={products} />
     </>
   );
 };

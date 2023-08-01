@@ -8,6 +8,19 @@ const ORDER_BY = {
   Z_TO_A: "za",
 };
 
+const NAV_OPTS = [
+  {
+    id: 1,
+    href: "/",
+    label: "Home",
+  },
+  {
+    id: 2,
+    href: "/favorites",
+    label: "Favorites",
+  },
+];
+
 const ORDER_DESC = "DESC";
 
-export { URL_PATH, ORDER_BY, ORDER_DESC };
+export { URL_PATH, ORDER_BY, ORDER_DESC, NAV_OPTS };
