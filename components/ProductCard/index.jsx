@@ -9,7 +9,7 @@ const ProductCard = ({ title, price, description, image }) => {
       <img // TODO: use Image next component instead
         className={styles.img}
         src={image}
-        alt="Product detail"
+        alt="product-detail"
       />
       <p className={styles.title}>{title}</p>
       <p className={styles.description}>{description}</p>
