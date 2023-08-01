@@ -1,0 +1,31 @@
+@import "../../styles/vars";
+@import "../../styles/mixings";
+
+.input {
+    @include formField;
+    width: 100%;
+    padding-left: 40px;
+    background-image: url("https://www.w3schools.com/css/searchicon.png");
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    margin-bottom: $space-3;
+}
+
+.filters_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.select_label {
+    margin-right: $space-3;
+    color: $default-text-color;
+}
+
+.select {
+    @include formField;
+    border: 1px solid #fff;
+    width: 30%;
+    min-width: 125px;
+    max-width: 150px;
+}

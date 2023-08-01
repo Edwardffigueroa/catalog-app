@@ -1,0 +1,32 @@
+@import "vars";
+
+@mixin tablet{
+    @media (min-width: $tablet-min-screen-size) {
+        @content
+    }
+}
+
+@mixin desktop{
+    @media (min-width: $desktop-min-screen-size) {
+        @content
+      }
+}
+
+@mixin rounded-corner($arc) {
+    -moz-border-radius: $arc;
+    -webkit-border-radius: $arc;
+    border-radius: $arc;  
+}
+
+@mixin formField {
+    border: 1px solid #ccc;
+    border-radius: $border-radius-5;
+    font-size: 16px;
+    background-color: white;
+    padding: $space-4 $space-6 $space-4 $space-6;
+    outline: none;
+    transition: 0.5s;
+    &:focus {
+        border: 1px solid #555;
+    }
+}

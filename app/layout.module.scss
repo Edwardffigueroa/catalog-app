@@ -1,0 +1,19 @@
+@import "../styles/vars";
+@import "../styles/mixings";
+
+.main {
+  position: relative;
+  top: -$space-5;
+  padding: $space-6;
+  background-color: white;
+  max-width: $desktop-min-screen-size;
+  margin: auto;
+  min-height: 80vh;
+}
+
+.footer {
+  display: flex;
+  padding-bottom: $space-2;
+  justify-content: center;
+  align-items: center;
+}

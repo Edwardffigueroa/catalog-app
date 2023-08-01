@@ -1,0 +1,9 @@
+@import "../../styles/vars";
+@import "../../styles/mixings";
+
+.h2 {
+    color: $primary-color;
+    font-size: $h2-font-size;
+    font-weight: 500;
+    margin: $space-5 0px $space-5 0px;
+}
