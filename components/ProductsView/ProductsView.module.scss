@@ -1,0 +1,26 @@
+@import "../../styles/vars";
+@import "../../styles/mixings";
+
+@mixin basic_container {
+    padding: $space-6 0px;
+    display: grid;
+    gap: $space-5;
+}
+
+.products_container {
+    @include basic_container;
+    grid-template-columns: 1fr 1fr;
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include desktop {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.products_container2 {
+    @include basic_container;
+    grid-template-columns: 1fr;
+}
