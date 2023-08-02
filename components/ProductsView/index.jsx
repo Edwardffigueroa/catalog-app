@@ -7,6 +7,7 @@ import useLocalStorage from "@/hooks/useLocalStorage";
 const ProductsView = ({ products }) => {
   const { toggleLayout } = useLayout();
   const [favorites, setFavorites] = useLocalStorage("favorites", []);
+  const productsToRender = products || favorites;
 
   const handleOnAddFavorites = (obj) => {
     setFavorites([...favorites, obj]);
@@ -22,7 +23,7 @@ const ProductsView = ({ products }) => {
         toggleLayout ? styles.products_container : styles.products_container2
       }`}
     >
-      {products.map((product) => (
+      {productsToRender.map((product) => (
         <ProductCard
           toggleLayout={toggleLayout}
           key={product.id}

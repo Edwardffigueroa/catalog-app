@@ -34,11 +34,13 @@ const ProductCard = ({
 
   return (
     <div className={`${toggleLayout ? styles.card : styles.card2}`}>
-      <img // TODO: use Image next component instead
-        className={styles.img}
-        src={image}
-        alt="product-detail"
-      />
+      <div className={styles.img_container}>
+        <img // TODO: use Image next component instead
+          className={styles.img}
+          src={image}
+          alt="product-detail"
+        />
+      </div>
       <p className={styles.title}>{title}</p>
       <p className={styles.description}>{description}</p>
       <hr className={styles.hr} />

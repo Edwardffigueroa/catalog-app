@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Catalog app
+
+![alt text](https://firebasestorage.googleapis.com/v0/b/mifabulosoproyecto-b4e64.appspot.com/o/cover_repo.png?alt=media&token=98cf34b9-d579-42bd-9b9e-5602e90dcd9e)
+
+This is a project made with Next.js for a technical assestment for platzi.
+
+Live Demo: https://catalog-app-one.vercel.app
 
 ## Getting Started
 

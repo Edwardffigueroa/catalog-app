@@ -4,6 +4,10 @@ import HomeContainer from "@/containers/HomeContainer/HomeContainer";
 export const metadata = {
   title: "Catalog App - Products",
   description: "Platzi technical challenge",
+  openGraph: {
+    title: "Catalog App - Products",
+    description: "latzi technical challenge",
+  },
 };
 
 export default async function Home() {
